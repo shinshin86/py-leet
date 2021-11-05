@@ -1,8 +1,6 @@
 # py-leet
 Implements leetspeak converter at Python. <br>This is created to learn Python.
 
-
-
 ## Example
 
 ```bash
@@ -12,7 +10,11 @@ $python # It works only Python 3
 '\\-/|=-el|<> \\^/[]lz||>!'
 ```
 
+## Test
 
+```sh
+python -m unittest
+```
 
 ## Reference
 
