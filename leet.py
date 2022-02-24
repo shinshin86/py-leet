@@ -1,6 +1,7 @@
 from random import randint
 
-def leet(inputs):
+
+def get_leet_list():
     # reference : https://ja.wikipedia.org/wiki/Leet
     A = ["A","4","/\\","@","/-\\", "^", "aye", "(L","Д"]
     B = ["B","I3","8","13","|3","ß","P>","|:","!3","(3","/3",")3","|-]","j3"]
@@ -29,13 +30,16 @@ def leet(inputs):
     Y = ["Y","j","`/","Ч","7","\\|/","¥"]
     Z = ["Z","2","7_","-/_","%",">_","s","~/_","-\\_","-|_"]
 
-    LEET_MAP_LIST = [A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
+    return [A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
 
+
+def leet(inputs):
+    leet_list = get_leet_list()
     leet_idx = []
     res = ''
 
-    for i in range(len(LEET_MAP_LIST)):
-        leet_idx.append(LEET_MAP_LIST[i][0])
+    for i in range(len(leet_list)):
+        leet_idx.append(leet_list[i][0])
 
     li = list(inputs)
 
@@ -44,7 +48,7 @@ def leet(inputs):
             res += li[i]
         else:
             idx = leet_idx.index(li[i].upper())
-            n = randint(1,len(LEET_MAP_LIST[idx])-1)
-            res += LEET_MAP_LIST[idx][n]
+            n = randint(1,len(leet_list[idx])-1)
+            res += leet_list[idx][n]
 
     return res
